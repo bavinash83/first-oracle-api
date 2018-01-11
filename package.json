@@ -19,6 +19,7 @@
   "homepage": "https://github.com/bavinash83/first-oracle-api#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "file-system": "^2.2.2"
+    "file-system": "^2.2.2",
+    "mysql": "^2.15.0"
   }
 }

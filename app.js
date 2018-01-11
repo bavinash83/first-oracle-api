@@ -4,6 +4,7 @@ const fs = require('file-system');
 const bodyParser = require('body-parser');
 //import {dbconnect} from '/db-calls/dbcall.js';
 const dbconnect = require('./db-calls/dbcall.js');
+const myconnect = require('./db-calls/my-connection.js');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -44,7 +45,10 @@ app.get("/p",function(req,res){
     //call a different file or command
     const mydbcon = new dbconnect();
     let vCall = mydbcon.dbcon(req.query.tagId, req.query.testId);
-    res.send(vCall);
+    //res.send(vCall);
+    const mysqlcon = new myconnect();
+    let vResp = myconnect.mycon();
+    res.send(vResp); 
 })
 
 app.listen(3000, function(err){
